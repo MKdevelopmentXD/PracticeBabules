@@ -1,0 +1,44 @@
+﻿@model ReportsViewModel
+
+<h1>@(Model.ReportType == "category" ? "Expenses and Revenues by Category for " + Model.Month.ToString("MMMM yyyy") : "Unknown Report Type")</h1>
+
+    @if (Model.ReportType == "category")
+    {
+        <h2>Expenses</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var categoryExpense in Model.Expenses)
+                {
+                    <tr>
+                        <td>@categoryExpense.CategoryName</td>
+                        <td>@categoryExpense.TotalAmount.ToString("C2")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+ 
+        <h2>Revenues</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var categoryRevenue in Model.Revenues)
+                {
+                    <tr>
+                        <td>@categoryRevenue.CategoryName</td>
+                        <td>@categoryRevenue.TotalAmount.ToString("C2")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }

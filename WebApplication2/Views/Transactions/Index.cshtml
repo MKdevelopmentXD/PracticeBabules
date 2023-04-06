@@ -1,28 +1,37 @@
 ﻿@model IEnumerable<Transaction>
 
-<h1>Transactions</h1>
+<h1>Транзакції</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Створити нову...</a>
 </p>
+
+<style>
+    body {
+        background: linear-gradient(#c6e4ee 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%);
+    }
+</style>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Category.Name)
+                Категорія
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
+                Тип
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Amount)
+                Витрачено/Зароблено
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TransactionDate)
+                Дата і час транзакції
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Note)
+                Опис
+            </th>
+            <th>
+                Керування
             </th>
         </tr>
     </thead>
@@ -46,9 +55,8 @@
                 @Html.DisplayFor(modelItem => item.Note)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id">Редагувати...</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Видалити...</a>
             </td>
         </tr>
         }

@@ -1,14 +1,20 @@
 ﻿@model Category
 
-<h1>Create</h1>
+<h1>Створити категорію</h1>
+
+<style>
+    body {
+        background: linear-gradient(#c6e4ee 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%);
+    }
+</style>
 
 <form asp-action="Create">
     <div class="form-group">
-        <label asp-for="Name" class="control-label"></label>
+        <label asp-for="Name" class="control-label">Назва</label>
         <input asp-for="Name" class="form-control" />
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <input type="submit" value="Create" class="btn btn-primary" />
+        <input type="submit" value="Створити" class="btn btn-primary" />
     </div>
 </form>

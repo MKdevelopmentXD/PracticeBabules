@@ -33,7 +33,7 @@ namespace WebApplication2.Controllers
         public IActionResult Create()
         {
             ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name");
-            ViewBag.Type = new Transaction { Type = "Expense" };
+            ViewBag.Type = new Transaction { Type = "Витрата" };
             return View();
         }
 
@@ -50,7 +50,7 @@ namespace WebApplication2.Controllers
             }
 
             ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name", transaction.CategoryId);
-            ViewBag.Type = new SelectList(new List<string> { "Expense", "Revenue" }, transaction.Type);
+            ViewBag.Type = new SelectList(new List<string> { "Витрата", "Дохід" }, transaction.Type);
             return View(transaction);
         }
 
@@ -69,7 +69,7 @@ namespace WebApplication2.Controllers
             }
 
             ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name", transaction.CategoryId);
-            ViewBag.Type = new SelectList(new List<string> { "Expense", "Revenue" }, transaction.Type);
+            ViewBag.Type = new SelectList(new List<string> { "Витрата", "Дохід" }, transaction.Type);
             return View(transaction);
         }
 
@@ -105,7 +105,7 @@ namespace WebApplication2.Controllers
             }
 
             ViewBag.Categories = new SelectList(_context.Categories, "Id", "Name", transaction.CategoryId);
-            ViewBag.Type = new SelectList(new List<string> { "Expense", "Revenue" }, transaction.Type);
+            ViewBag.Type = new SelectList(new List<string> { "Витрата", "Дохід" }, transaction.Type);
             return View(transaction);
         }
 

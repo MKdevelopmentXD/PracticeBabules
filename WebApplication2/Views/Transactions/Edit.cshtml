@@ -1,38 +1,44 @@
 ﻿@model Transaction
 
-<h1>Edit</h1>
+<h1>Редагувати</h1>
+
+<style>
+    body {
+        background: linear-gradient(#c6e4ee 0%, #c6e4ee 40%, #fed1ae 60%, #faa0b9 70%, #cb7dcb 80%, #757ecb 100%);
+    }
+</style>
 
 <form asp-action="Edit">
     <input type="hidden" asp-for="Id" />
     <div class="form-group">
-        <label asp-for="CategoryId" class="control-label"></label>
+        <label asp-for="CategoryId" class="control-label">Категорія</label>
         <select asp-for="CategoryId" asp-items="@((SelectList)ViewData["Categories"])" class="form-control"></select>
         <span asp-validation-for="CategoryId" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Type" class="control-label"></label>
+        <label asp-for="Type" class="control-label">Тип</label>
         <select asp-for="Type" asp-items='new List<SelectListItem>
     {
-        new SelectListItem { Text = "Expense", Value = "Expense" },
-        new SelectListItem { Text = "Revenue", Value = "Revenue" }
+        new SelectListItem { Text = "Витрата", Value = "Витрата" },
+        new SelectListItem { Text = "Прибуток", Value = "Прибуток" }
     }' class="form-control"></select>
     </div>
     <div class="form-group">
-        <label asp-for="Amount" class="control-label"></label>
+        <label asp-for="Amount" class="control-label">Витрачено/Зароблено</label>
         <input asp-for="Amount" class="form-control" />
         <span asp-validation-for="Amount" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="TransactionDate" class="control-label"></label>
+        <label asp-for="TransactionDate" class="control-label">Дата і час</label>
         <input asp-for="TransactionDate" class="form-control" />
         <span asp-validation-for="TransactionDate" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Note" class="control-label"></label>
+        <label asp-for="Note" class="control-label">Опис</label>
         <input asp-for="Note" class="form-control" />
         <span asp-validation-for="Note" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-primary" />
+        <input type="submit" value="Зберегти" class="btn btn-primary" />
     </div>
 </form>
